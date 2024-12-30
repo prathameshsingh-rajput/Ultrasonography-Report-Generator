@@ -28,6 +28,7 @@ import java.util.stream.Stream;
 
 public class MajorReportMainPanel extends JPanel {
     private MajorReportPanel majorReportPanel;
+    private String fileName;
 
     //Global PDF fonts
     Font normalFont = new Font(Font.FontFamily.TIMES_ROMAN, 14, Font.NORMAL);
@@ -59,7 +60,7 @@ public class MajorReportMainPanel extends JPanel {
         }
 
         // Generate file name
-        String fileName = patientName.replaceAll("[^a-zA-Z0-9]", "") + "_" + new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date()) + ".pdf";
+        fileName = patientName.replaceAll("[^a-zA-Z0-9]", "") + "_" + new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date()) + ".pdf";
 
         // Define the path to the 'USG Reports/Photo Report' folder on the 'D' drive
         Path usReportFolderPath = Path.of("D:", "USG Reports", "Major Report");
@@ -248,6 +249,47 @@ public class MajorReportMainPanel extends JPanel {
         }
     }
 
+    public void saveMajorReportData() {
+        // Create an instance of DatabaseStorage and pass the data
+        MajorReportDatabase databaseStorage = new MajorReportDatabase(
+                fileName.substring(0, fileName.length()-4), //-4 to remove ".pdf"
+                majorReportPanel.getPatientNameM(),
+                majorReportPanel.getAgeM(),
+                majorReportPanel.getSexPatientM(),
+                majorReportPanel.getCurrDateM(),
+                majorReportPanel.getDrNameM(),
+                majorReportPanel.getLivesData(),
+                majorReportPanel.getLiveDataBold(),
+                majorReportPanel.getFoetalCardiacData(),
+                majorReportPanel.getPlacentaGradeData(),
+                majorReportPanel.getFSR(),
+                majorReportPanel.getPlacentalClotsData(),
+                majorReportPanel.getAFI(),
+                majorReportPanel.getOsData(),
+                majorReportPanel.getAmnioticFluidData(),
+                majorReportPanel.getUmbilicalCordData(),
+                majorReportPanel.getLMP(),
+                majorReportPanel.getEdd1(),
+                majorReportPanel.getEdd2(),
+                majorReportPanel.getRC00(),
+                majorReportPanel.getRC01(),
+                majorReportPanel.getRC02(),
+                majorReportPanel.getRC10(),
+                majorReportPanel.getRC11(),
+                majorReportPanel.getRC12(),
+                majorReportPanel.getRC20(),
+                majorReportPanel.getRC21(),
+                majorReportPanel.getRC22(),
+                majorReportPanel.getRC30(),
+                majorReportPanel.getRC31(),
+                majorReportPanel.getRC32(),
+                majorReportPanel.getAvgAge(),
+                majorReportPanel.getFoetalWeight(),
+                majorReportPanel.getImp(),
+                majorReportPanel.getAddiNote()
+        );
+    }
+
     private void addTableCell(PdfPTable table, String text, Font font) {
         PdfPCell cell = new PdfPCell(new Phrase(text, font));
         cell.setBorder(PdfPCell.NO_BORDER);
@@ -288,6 +330,7 @@ public class MajorReportMainPanel extends JPanel {
         cell.setMinimumHeight(25f); // Increase cell height
         return cell;
     }
+
     public void viewMajorReportPDF() {
         Path majorReportFolderPath = Path.of("D:", "USG Reports", "Major Report");
 

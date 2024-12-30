@@ -29,7 +29,7 @@ public class MinorReportDatabase{
         try (MongoClient mongoClient = MongoClients.create(settings)) {
             try {
                 // Get the database and collection
-                MongoDatabase database = mongoClient.getDatabase("UltrasonographyReports");  // Replace with your database name
+                MongoDatabase database = mongoClient.getDatabase("UltrasonographyReports");
                 MongoCollection<Document> collection = database.getCollection("MinorReports");
 
                 // Create a new document for the report data
