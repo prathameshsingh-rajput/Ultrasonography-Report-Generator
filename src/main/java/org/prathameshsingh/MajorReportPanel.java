@@ -55,11 +55,13 @@ public class MajorReportPanel extends JPanel{
     private JTextField rC22Field;
     private JTextField rC32Field;
 
-    String drName = "Dr. Xyz";
+    String drName = "Dr. Mayuri Dhoran";
     String sexPatient = "Female";
 
     Font labelFont = new Font("Roboto", Font.BOLD, 15);
     Font inputFont = new Font("Verdana", Font.PLAIN, 13);
+    Font buttonFont = new Font("Roboto", Font.BOLD, 18);
+
 
 
     public MajorReportPanel() {
@@ -477,15 +479,16 @@ public class MajorReportPanel extends JPanel{
         scrollPane.setBounds(170, 630, 450, 50);
         add(scrollPane);
 
-
         generateRepButton = new JButton("Generate Report");
-        generateRepButton.setFont(labelFont);
+        generateRepButton.setFont(buttonFont);
         generateRepButton.setBounds(700, 635, 180, 50);
+        generateRepButton.setBorderPainted(false);
         add(generateRepButton);
 
         vieReportButton = new JButton("View Report");
-        vieReportButton.setFont(labelFont);
+        vieReportButton.setFont(buttonFont);
         vieReportButton.setBounds(900, 635, 180, 50);
+        vieReportButton.setBorderPainted(false);
         add(vieReportButton);
 
 
@@ -517,7 +520,7 @@ public class MajorReportPanel extends JPanel{
             JTextField textField = (JTextField) input;
             String text = textField.getText().trim();
 
-            if (text.matches("\\d+") && Integer.parseInt(text) <= 149 && Integer.parseInt(text) >= 18) {
+            if (text.matches("\\d+") && Integer.parseInt(text) <= 60 && Integer.parseInt(text) >= 18) {
                 return true;
             } else {
                 JOptionPane.showMessageDialog(MajorReportPanel.this, "Please enter a valid age.", "Invalid Age", JOptionPane.ERROR_MESSAGE);

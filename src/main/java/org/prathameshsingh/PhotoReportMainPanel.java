@@ -174,7 +174,7 @@ public class PhotoReportMainPanel extends JPanel {
                 lastTable.setSpacingBefore(80);
                 lastTable.setSpacingAfter(0f);
                 addTableCell(lastTable, "\n       www.linkedin.com/in/connect-psr", myAdFont);
-                addTableCell(lastTable, "           Dr. Xyz ", boldPoint);
+                addTableCell(lastTable, "           Dr. MAYURI HIWALE ", boldPoint);
 
 
                 document.add(lastTable);
@@ -186,7 +186,7 @@ public class PhotoReportMainPanel extends JPanel {
                 lastTable.setSpacingBefore(15f);
                 lastTable.setSpacingAfter(0f);
                 addTableCell(lastTable, "\n       www.linkedin.com/in/connect-psr", myAdFont);
-                addTableCell(lastTable, "           Dr. Xyz ", boldPoint);
+                addTableCell(lastTable, "           Dr. MAYURI HIWALE ", boldPoint);
 
 
                 document.add(lastTable);

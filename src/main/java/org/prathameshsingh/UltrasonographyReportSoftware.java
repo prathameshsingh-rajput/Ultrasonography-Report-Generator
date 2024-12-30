@@ -15,9 +15,10 @@ public class UltrasonographyReportSoftware {
                 UIManager.put("Panel.background", new java.awt.Color(224, 243, 255));
                 UIManager.put("Label.foreground", new java.awt.Color(0, 0, 139));
                 UIManager.put("TextField.background", new java.awt.Color(255, 255, 240));
+                UIManager.put("PasswordField.foreground", new java.awt.Color(0, 0, 0));
                 UIManager.put("TextArea.background", new java.awt.Color(255, 255, 240));
-                UIManager.put("Button.background", new java.awt.Color(173, 216, 230));
-                UIManager.put("Button.foreground", new java.awt.Color(0, 0, 139));
+                UIManager.put("Button.background", new java.awt.Color(30, 144, 255));
+                UIManager.put("Button.foreground", new java.awt.Color(255, 255, 255));
 
             } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
                 e.printStackTrace();
