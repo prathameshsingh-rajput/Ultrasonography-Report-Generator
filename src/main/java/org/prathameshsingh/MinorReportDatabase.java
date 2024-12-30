@@ -8,9 +8,9 @@ import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 import org.bson.types.ObjectId;
 
-public class DatabaseStorage{
+public class MinorReportDatabase{
 
-    public DatabaseStorage(String fileName, String patientName, String age, String sex, String doctorName, String reportDate, String lmp, String ga, String aga, String edd1, String edd2, String liverFetusNote, String liverFetusNumNote, String foetalAndSacField, String os, String fetalCardiac, String fbgSmm, String fbgs, String crLmm, String crl, String amnioticFluid, String impressAndComm, String addiNote){
+    public MinorReportDatabase(String fileName, String patientName, String age, String sex, String doctorName, String reportDate, String lmp, String ga, String aga, String edd1, String edd2, String liverFetusNote, String liverFetusNumNote, String foetalAndSacField, String os, String fetalCardiac, String fbgSmm, String fbgs, String crLmm, String crl, String amnioticFluid, String impressAndComm, String addiNote){
         String encodedUsername = "admin";
         String encodedPassword = "Mongo%401234";
         String connectionString = "mongodb+srv://"+ encodedUsername +":"+ encodedPassword +"@navoday-hospital.g6dcr.mongodb.net/?retryWrites=true&w=majority&appName=Navoday-Hospital";
@@ -65,8 +65,4 @@ public class DatabaseStorage{
             }
         }
     }
-//    public static void main(String[]args) {
-//        DatabaseStorage obj = new DatabaseStorage();
-//        obj.storeMinorRepoMongoDB();
-//    }
 }
