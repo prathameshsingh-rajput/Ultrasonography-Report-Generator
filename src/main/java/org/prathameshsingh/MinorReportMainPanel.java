@@ -13,6 +13,7 @@ import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 import org.apache.pdfbox.io.IOUtils;
+
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -22,9 +23,10 @@ import java.util.Date;
 import java.util.Optional;
 import java.util.stream.Stream;
 
+
 public class MinorReportMainPanel extends JPanel {
     private MinorReportPanel minorReportPanel;
-    String fileName;
+    private String fileName;
     private File selectedImageFile;
 
     // Output PDF Global Font
@@ -61,7 +63,7 @@ public class MinorReportMainPanel extends JPanel {
         }
 
         // Generate file name
-        String fileName = patientName.replaceAll("[^a-zA-Z0-9]", "") + "_" + new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date()) + ".pdf";
+        fileName = patientName.replaceAll("[^a-zA-Z0-9]", "") + "_" + new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date()) + ".pdf";
 
         // Define the path to the 'USG Report/Minor Report' folder on the D drive
         Path usReportFolderPath = Path.of("D:", "USG Reports", "Minor Report");
@@ -241,7 +243,34 @@ public class MinorReportMainPanel extends JPanel {
         }
     }
 
-
+    public void saveReportData() {
+        // Create an instance of DatabaseStorage and pass the data
+        DatabaseStorage databaseStorage = new DatabaseStorage(
+                fileName.substring(0, fileName.length()-4), //-4 to remove ".pdf"
+                minorReportPanel.getPatientName(),
+                minorReportPanel.getAge(),
+                minorReportPanel.getSex(),
+                minorReportPanel.getDoctorName(),
+                minorReportPanel.getCurrentDate(),
+                minorReportPanel.getLMP(),
+                minorReportPanel.getGA(),
+                minorReportPanel.getAGA(),
+                minorReportPanel.getEdd1(),
+                minorReportPanel.getEdd2(),
+                minorReportPanel.getLiverFetusNote(),
+                minorReportPanel.getLiverFetusNumNote(),
+                minorReportPanel.getFoetalAndSacField(),
+                minorReportPanel.getOs(),
+                minorReportPanel.getFetalCardiac(),
+                minorReportPanel.getFBGSmm(),
+                minorReportPanel.getFBGS(),
+                minorReportPanel.getCRLmm(),
+                minorReportPanel.getCRL(),
+                minorReportPanel.getAmnioticFluid(),
+                minorReportPanel.getImpressAndComm(),
+                minorReportPanel.getAddiNote()
+        );
+    }
 
     // Helper method to add table cells with text
     private void addTableCell(PdfPTable table, String text, Font font) {

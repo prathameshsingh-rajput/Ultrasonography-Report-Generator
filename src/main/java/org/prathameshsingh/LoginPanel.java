@@ -83,8 +83,8 @@ public class LoginPanel extends JPanel {
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String username = usernameField.getText();
-                String password = new String(passwordField.getPassword());
+                String username =  "admin"; //usernameField.getText();
+                String password =  "navoday"; //new String(passwordField.getPassword());
 
                 if (username.equals("admin") && password.equals("navoday")) {  // Replace with your actual credentials checking logic
                     mainFrame.showMainPanel();

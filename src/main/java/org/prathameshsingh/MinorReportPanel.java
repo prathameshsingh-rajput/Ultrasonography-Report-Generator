@@ -13,7 +13,7 @@ import javax.swing.border.Border;
 
 
 public class MinorReportPanel extends JPanel {
-    private JTextField patientNameField;
+    public JTextField patientNameField;
     private JTextField ageField;
     private JButton generateReportButton;
     private JButton viewButton;
@@ -48,7 +48,6 @@ public class MinorReportPanel extends JPanel {
 
     private File selectedImageFile;
     String drName = "Dr. Mayuri Dhoran";
-
 
     public MinorReportPanel() {
         setLayout(null); // To Use absolute positioning
@@ -401,6 +400,7 @@ public class MinorReportPanel extends JPanel {
                 MinorReportMainPanel minorReportMainPanel = (MinorReportMainPanel) SwingUtilities.getAncestorOfClass(MinorReportMainPanel.class, MinorReportPanel.this);
                 if (minorReportMainPanel != null) {
                     minorReportMainPanel.generatePDF();
+                    minorReportMainPanel.saveReportData();
                 }
             }
         });
@@ -590,4 +590,5 @@ public class MinorReportPanel extends JPanel {
         };
         return fluid;
     }
+
 }
