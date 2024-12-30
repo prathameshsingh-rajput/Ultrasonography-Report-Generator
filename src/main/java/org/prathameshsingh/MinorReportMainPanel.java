@@ -208,7 +208,7 @@ public class MinorReportMainPanel extends JPanel {
 
             Paragraph doctorInfo = new Paragraph();
             doctorInfo.setLeading(14f); // Set the line spacing
-            doctorInfo.add(new Chunk("\n\n\n\n    Dr. Xyz\n", boldFont));
+            doctorInfo.add(new Chunk("\n\n\n\n    Dr. MAYURI HIWALE\n", boldFont));
             doctorInfo.add(new Chunk("    MBBS. DNB (Obs & Gynae) Hyderabad \n" +
                     "    Fellowship in Ultrasonography (Mumbai)", smallNormal));
 
@@ -226,7 +226,7 @@ public class MinorReportMainPanel extends JPanel {
             table8.setSpacingBefore(0f);
             table8.setSpacingAfter(0f);
             addTableCell(table8, "Please correlate clinically \n" +
-                    "I Dr. Xyz, declare that I've not detected fetal sex not disclosed fetal set to any body in any manner while conducting USG study.", boldFontData);
+                    "I Dr. MAYURI DHORAN, declare that I've not detected fetal sex not disclosed fetal set to any body in any manner while conducting USG study.", boldFontData);
 
             document.add(table8);
 

@@ -22,7 +22,7 @@ public class LoginPanel extends JPanel {
         setLayout(null);
 
         // Load custom fonts
-        Font robotoBold = new Font("Roboto", Font.BOLD, 26);
+        Font robotoBold = new Font("Roboto", Font.BOLD, 24);
         Font robotoPlain = new Font("Roboto", Font.BOLD, 20);
         Font inputFont = new Font("Verdana", Font.PLAIN, 20);
 
@@ -37,7 +37,7 @@ public class LoginPanel extends JPanel {
         JLabel titleLabel = new JLabel("Login to PSR-SoftHub");
         titleLabel.setFont(robotoBold);
         titleLabel.setForeground(new Color(0, 0, 139));
-        titleLabel.setBounds(100, 100, 300, 50);
+        titleLabel.setBounds(105, 190, 300, 50);
         add(titleLabel);
 
         JLabel usernameLabel = new JLabel("Username: ");
@@ -65,8 +65,6 @@ public class LoginPanel extends JPanel {
         loginButton = new JButton("Login");
         loginButton.setFont(robotoBold);
         loginButton.setBounds(210, 350, 150, 40);
-        loginButton.setBackground(new Color(30, 144, 255));
-        loginButton.setForeground(Color.WHITE);
         loginButton.setBorderPainted(false);
         add(loginButton);
 
@@ -76,13 +74,19 @@ public class LoginPanel extends JPanel {
         messageLabel.setBounds(100, 350, 300, 30);
         add(messageLabel);
 
+        JLabel copyrightLabel = new JLabel("© 2025 PSR-SoftHub [Rajput Prathameshsingh]. All rights reserved.", SwingConstants.CENTER);
+        copyrightLabel.setFont(new Font("Roboto", Font.PLAIN, 13));
+        copyrightLabel.setForeground(Color.BLACK);
+        copyrightLabel.setBounds(80, 500, 400, 30);
+        add(copyrightLabel);
+
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String username = usernameField.getText();
                 String password = new String(passwordField.getPassword());
 
-                if (username.equals("admin") && password.equals("password")) {  // Replace with your actual credentials checking logic
+                if (username.equals("admin") && password.equals("navoday")) {  // Replace with your actual credentials checking logic
                     mainFrame.showMainPanel();
                 } else {
                     JOptionPane.showMessageDialog(LoginPanel.this, "Invalid Username or password!", "Access Denied", JOptionPane.ERROR_MESSAGE);
@@ -98,5 +102,11 @@ public class LoginPanel extends JPanel {
             // Draw the background image to cover the entire panel
             g.drawImage(backgroundImage, 0, 0, getWidth(), getHeight(), this);
         }
+    }
+
+    public void resetFields() {
+        usernameField.setText("");
+        passwordField.setText("");
+        messageLabel.setText("");
     }
 }

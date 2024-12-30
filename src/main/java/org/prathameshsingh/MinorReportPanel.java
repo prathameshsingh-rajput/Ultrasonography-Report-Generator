@@ -17,8 +17,6 @@ public class MinorReportPanel extends JPanel {
     private JTextField ageField;
     private JButton generateReportButton;
     private JButton viewButton;
-    private JButton photoReportButton;
-    private JButton majorReportButton;
     private JComboBox<String> dayComboBox;
     private JComboBox<String> monthComboBox;
     private JComboBox<String> yearComboBox;
@@ -49,15 +47,16 @@ public class MinorReportPanel extends JPanel {
     private JTextArea additionalNoteField;
 
     private File selectedImageFile;
-    String drName = "Dr. Xyz";
+    String drName = "Dr. Mayuri Dhoran";
 
 
     public MinorReportPanel() {
         setLayout(null); // To Use absolute positioning
 
         Font labelFont = new Font("Roboto", Font.BOLD, 15);
-        Font rightReserveFont = new Font("Roboto", Font.PLAIN, 11);
         Font inputFont = new Font("Verdana", Font.PLAIN, 13);
+        Font robotoBold = new Font("Roboto", Font.BOLD, 18);
+
 
         JLabel patientNameLabel = new JLabel("Patient Name:");
         patientNameLabel.setFont(labelFont);
@@ -67,6 +66,7 @@ public class MinorReportPanel extends JPanel {
         patientNameField = new JTextField();
         patientNameField.setFont(inputFont);
         patientNameField.setBounds(165, 20, 350, 30);
+        patientNameField.setBorder(null);
         add(patientNameField);
 
         JLabel ageLabel = new JLabel("Age:");
@@ -380,28 +380,18 @@ public class MinorReportPanel extends JPanel {
         scrollPane.setBounds(270, 520, 520, 80);
         add(scrollPane);
 
-//        //photo Report Button
-//        photoReportButton = new JButton("Photo Report ");
-//        photoReportButton.setFont(labelFont);
-//        photoReportButton.setBounds(200, 630, 180, 50);
-//        add(photoReportButton);
-//
-//        // Major Report Button
-//        majorReportButton = new JButton("Major Report ");
-//        majorReportButton.setFont(labelFont);
-//        majorReportButton.setBounds(400, 630, 180, 50);
-//        add(majorReportButton);
-
         // Generate Report Button
         generateReportButton = new JButton("Generate Report");
-        generateReportButton.setFont(labelFont);
+        generateReportButton.setFont(robotoBold);
         generateReportButton.setBounds(600, 630, 180, 50);
+        generateReportButton.setBorderPainted(false);
         add(generateReportButton);
 
         // View Report Button
         viewButton = new JButton("View Report");
-        viewButton.setFont(labelFont);
+        viewButton.setFont(robotoBold);
         viewButton.setBounds(800, 630, 180, 50);
+        viewButton.setBorderPainted(false);
         add(viewButton);
 
 
@@ -547,7 +537,7 @@ public class MinorReportPanel extends JPanel {
             JTextField textField = (JTextField) input;
             String text = textField.getText().trim();
 
-            if (text.matches("\\d+") && Integer.parseInt(text) <= 149 && Integer.parseInt(text) >= 18) {
+            if (text.matches("\\d+") && Integer.parseInt(text) <= 60 && Integer.parseInt(text) >= 18) {
                 return true;
             } else {
                 JOptionPane.showMessageDialog(MinorReportPanel.this, "Please enter a valid age.", "Invalid Age", JOptionPane.ERROR_MESSAGE);

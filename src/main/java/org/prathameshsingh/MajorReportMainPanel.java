@@ -225,7 +225,7 @@ public class MajorReportMainPanel extends JPanel {
             addBlankTableCell(table7);
             Paragraph doctorInfo = new Paragraph();
             doctorInfo.setLeading(14f); // Set the line spacing
-            doctorInfo.add(new Chunk("\n\n    Dr. Xyz\n", boldFont));
+            doctorInfo.add(new Chunk("\n\n    Dr. MAYURI HIWALE\n", boldFont));
             doctorInfo.add(new Chunk("    MBBS. DNB (Obs & Gynae) Hyderabad \n" +
                     "    Fellowship in Ultrasonography (Mumbai)", smallNormal));
 

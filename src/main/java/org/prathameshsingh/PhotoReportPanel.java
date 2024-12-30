@@ -20,10 +20,12 @@ public class PhotoReportPanel extends JPanel {
     JButton generateReportButton;
     JButton viewReportButton;
 
-    String drName = "Dr. Xyz";
+    String drName = "Dr. Mayuri Dhoran";
 
     Font labelFont = new Font("Roboto", Font.BOLD, 15);
     Font inputFont = new Font("Verdana", Font.PLAIN, 13);
+    Font robotoBold = new Font("Roboto", Font.BOLD, 18);
+
 
     public PhotoReportPanel() {
         setLayout(null);
@@ -83,8 +85,9 @@ public class PhotoReportPanel extends JPanel {
         add(refferdBy);
 
         selectImagesButton = new JButton("Select Images");
-        selectImagesButton.setFont(labelFont);
+        selectImagesButton.setFont(robotoBold);
         selectImagesButton.setBounds(20, 110, 180, 40);
+        selectImagesButton.setBorderPainted(false);
         add(selectImagesButton);
 
         imagePanel = new JPanel();
@@ -102,16 +105,18 @@ public class PhotoReportPanel extends JPanel {
         });
 
         generateReportButton = new JButton("Generate Report");
-        generateReportButton.setFont(labelFont);
+        generateReportButton.setFont(robotoBold);
         generateReportButton.setBounds(600, 630, 180, 50);
         generateReportButton.setVisible(false); // Initially hidden
+        generateReportButton.setBorderPainted(false);
         add(generateReportButton);
 
         // View Report Button
         viewReportButton = new JButton("View Report");
-        viewReportButton.setFont(labelFont);
+        viewReportButton.setFont(robotoBold);
         viewReportButton.setBounds(800, 630, 180, 50);
         viewReportButton.setVisible(false); // Initially hidden
+        viewReportButton.setBorderPainted(false);
         add(viewReportButton);
 
         generateReportButton.addActionListener(new ActionListener() {
@@ -180,7 +185,7 @@ public class PhotoReportPanel extends JPanel {
             JTextField textField = (JTextField) input;
             String text = textField.getText().trim();
 
-            if (text.matches("\\d+") && Integer.parseInt(text) <= 149 && Integer.parseInt(text) >= 18) {
+            if (text.matches("\\d+") && Integer.parseInt(text) <= 60 && Integer.parseInt(text) >= 18) {
                 return true;
             } else {
                 JOptionPane.showMessageDialog(PhotoReportPanel.this, "Please enter a valid age.", "Invalid Age", JOptionPane.ERROR_MESSAGE);
@@ -191,7 +196,7 @@ public class PhotoReportPanel extends JPanel {
 
     /////////////////////////////////
     public String getPatientName() {
-        return patientNameField.getText();
+        return patientNameField.getText().toUpperCase();
     }
 
     public String getAge() {
