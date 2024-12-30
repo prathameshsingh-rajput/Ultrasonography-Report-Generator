@@ -243,9 +243,9 @@ public class MinorReportMainPanel extends JPanel {
         }
     }
 
-    public void saveReportData() {
+    public void saveMinorReportData() {
         // Create an instance of DatabaseStorage and pass the data
-        DatabaseStorage databaseStorage = new DatabaseStorage(
+        MinorReportDatabase databaseStorage = new MinorReportDatabase(
                 fileName.substring(0, fileName.length()-4), //-4 to remove ".pdf"
                 minorReportPanel.getPatientName(),
                 minorReportPanel.getAge(),

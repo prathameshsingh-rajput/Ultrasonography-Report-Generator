@@ -400,7 +400,7 @@ public class MinorReportPanel extends JPanel {
                 MinorReportMainPanel minorReportMainPanel = (MinorReportMainPanel) SwingUtilities.getAncestorOfClass(MinorReportMainPanel.class, MinorReportPanel.this);
                 if (minorReportMainPanel != null) {
                     minorReportMainPanel.generatePDF();
-                    minorReportMainPanel.saveReportData();
+                    minorReportMainPanel.saveMinorReportData();
                 }
             }
         });
