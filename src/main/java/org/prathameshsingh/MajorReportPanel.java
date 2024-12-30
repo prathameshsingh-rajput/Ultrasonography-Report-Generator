@@ -498,6 +498,7 @@ public class MajorReportPanel extends JPanel{
                 MajorReportMainPanel majorReportMainPanel = (MajorReportMainPanel) SwingUtilities.getAncestorOfClass(MajorReportMainPanel.class, MajorReportPanel.this);
                 if (majorReportMainPanel != null) {
                     majorReportMainPanel.generateMajorReport();
+                    majorReportMainPanel.saveMajorReportData();
                 }
             }
         });
