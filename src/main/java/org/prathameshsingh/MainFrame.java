@@ -37,7 +37,7 @@ public class MainFrame extends JFrame {
         setContentPane(mainPanel);
 
         // Custom frame icon
-        ImageIcon icon = new ImageIcon("C:/Users/hp22r/OneDrive/Desktop/Hospital Project/PsrSoftware/src/main/resources/appIcon.png"); // Replace with the path to your icon file
+        ImageIcon icon = new ImageIcon("C:/Users/hp22r/Desktop/Hospital Project/PsrSoftware/src/main/resources/myAppIcon.png"); // Replace with the path to your icon file
         setIconImage(icon.getImage());
 
         // Create menu bar
