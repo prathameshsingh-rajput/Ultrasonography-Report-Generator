@@ -58,6 +58,10 @@ public class MainFrame extends JFrame {
         view.setFont(new Font("Roboto", Font.BOLD, 17));
         view.setForeground(new java.awt.Color(0, 0, 139));
 
+        JMenu report = new JMenu("Report");
+        report.setFont(new Font("Roboto", Font.BOLD, 17));
+        report.setForeground(new java.awt.Color(0, 0, 139));
+
         JMenu about = new JMenu("About");
         about.setFont(new Font("Roboto", Font.BOLD, 17));
         about.setForeground(new java.awt.Color(0, 0, 139));
@@ -87,6 +91,7 @@ public class MainFrame extends JFrame {
         about.add(createAboutMenuItem()); // Add action listener to About menu
 
         menuBar.add(menu);
+        menuBar.add(report);
         menuBar.add(view);
         menuBar.add(about);
 
