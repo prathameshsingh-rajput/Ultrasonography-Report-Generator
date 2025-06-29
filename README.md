@@ -20,6 +20,7 @@ A professional Java desktop application for generating ultrasound examination re
 > ![Major USG Report Panel](src/main/resources/readme-img/major-usg-report-panel.png)
 > ![Photo USG Report Panel](src/main/resources/readme-img/photo-usg-report-panel.png)
 > ![USR Photo Report](src/main/resources/readme-img/DEMOPATIENT_20250630_010815.jpg)
+> ![USR Photo Report](src/main/resources/readme-img/DEMOPATIENT_20250630_020816_page-0001.jpg)
 
 ## ✨ Key Features
 
