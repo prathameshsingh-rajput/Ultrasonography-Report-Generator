@@ -15,7 +15,11 @@
 
 A professional Java desktop application for generating ultrasound examination reports with PDF output. Designed for medical practitioners to streamline diagnostic documentation workflow.
 
-![Application Screenshot](assets/demo-screenshot.png) <!-- Replace with actual screenshot -->
+> [Home Page](images\readme-img\home-page.png)
+> ![Home Page](images\readme-img\minor-usg-report-panel.png)
+> ![Home Page](images\readme-img\major-usg-report-panel.png)
+> ![Home Page](images\readme-img\photo-usg-report-panel.png)
+> ![Home Page](images\readme-img\DEMOPATIENT_20250630_010815.jpg)
 
 ## ✨ Key Features
 
