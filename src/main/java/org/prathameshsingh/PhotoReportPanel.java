@@ -20,7 +20,7 @@ public class PhotoReportPanel extends JPanel {
     JButton generateReportButton;
     JButton viewReportButton;
 
-    String drName = "Dr. Mayuri Dhoran";
+    String drName = "Dr. Prathameshsingh Rajput";
 
     Font labelFont = new Font("Roboto", Font.BOLD, 15);
     Font inputFont = new Font("Verdana", Font.PLAIN, 13);

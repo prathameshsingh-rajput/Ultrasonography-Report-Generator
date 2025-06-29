@@ -74,11 +74,11 @@ public class LoginPanel extends JPanel {
         messageLabel.setBounds(100, 350, 300, 30);
         add(messageLabel);
 
-        JLabel copyrightLabel = new JLabel("© 2025 PSR-SoftHub [Rajput Prathameshsingh]. All rights reserved.", SwingConstants.CENTER);
-        copyrightLabel.setFont(new Font("Roboto", Font.PLAIN, 13));
-        copyrightLabel.setForeground(Color.BLACK);
-        copyrightLabel.setBounds(80, 500, 400, 30);
-        add(copyrightLabel);
+//        JLabel copyrightLabel = new JLabel("© 2025 PSR-SoftHub [Rajput Prathameshsingh]. All rights reserved.", SwingConstants.CENTER);
+//        copyrightLabel.setFont(new Font("Roboto", Font.PLAIN, 13));
+//        copyrightLabel.setForeground(Color.BLACK);
+//        copyrightLabel.setBounds(80, 500, 400, 30);
+//        add(copyrightLabel);
 
         loginButton.addActionListener(new ActionListener() {
             @Override

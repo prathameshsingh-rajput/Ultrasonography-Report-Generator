@@ -84,7 +84,7 @@ public class MinorReportMainPanel extends JPanel {
 
             // Add Image at the top
             try {
-                InputStream imageStream = getClass().getClassLoader().getResourceAsStream("TopOfReportImg2.png");
+                InputStream imageStream = getClass().getClassLoader().getResourceAsStream("Non_photoRep.jpg.png");
                 if (imageStream != null) {
                     Image topImage = Image.getInstance(IOUtils.toByteArray(imageStream));
                     topImage.scaleToFit(PageSize.A4.getWidth() - 50, PageSize.A4.getHeight() / 4); // scale to fit the top portion
@@ -210,7 +210,7 @@ public class MinorReportMainPanel extends JPanel {
 
             Paragraph doctorInfo = new Paragraph();
             doctorInfo.setLeading(14f); // Set the line spacing
-            doctorInfo.add(new Chunk("\n\n\n\n    Dr. MAYURI HIWALE\n", boldFont));
+            doctorInfo.add(new Chunk("\n\n\n\n    Dr. Prathameshsingh Rajput\n", boldFont));
             doctorInfo.add(new Chunk("    MBBS. DNB (Obs & Gynae) Hyderabad \n" +
                     "    Fellowship in Ultrasonography (Mumbai)", smallNormal));
 
@@ -228,7 +228,7 @@ public class MinorReportMainPanel extends JPanel {
             table8.setSpacingBefore(0f);
             table8.setSpacingAfter(0f);
             addTableCell(table8, "Please correlate clinically \n" +
-                    "I Dr. MAYURI DHORAN, declare that I've not detected fetal sex not disclosed fetal set to any body in any manner while conducting USG study.", boldFontData);
+                    "I Dr. Prathameshsingh Rajput, declare that I've not detected fetal sex not disclosed fetal set to any body in any manner while conducting USG study.", boldFontData);
 
             document.add(table8);
 
@@ -245,7 +245,7 @@ public class MinorReportMainPanel extends JPanel {
 
     public void saveMinorReportData() {
         // Create an instance of DatabaseStorage and pass the data
-        MinorReportDatabase databaseStorage = new MinorReportDatabase(
+        /*MinorReportDatabase databaseStorage = new MinorReportDatabase(
                 fileName.substring(0, fileName.length()-4), //-4 to remove ".pdf"
                 minorReportPanel.getPatientName(),
                 minorReportPanel.getAge(),
@@ -269,7 +269,7 @@ public class MinorReportMainPanel extends JPanel {
                 minorReportPanel.getAmnioticFluid(),
                 minorReportPanel.getImpressAndComm(),
                 minorReportPanel.getAddiNote()
-        );
+        );*/
     }
 
     // Helper method to add table cells with text

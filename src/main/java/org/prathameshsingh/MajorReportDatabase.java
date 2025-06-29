@@ -8,12 +8,10 @@ import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 import org.bson.types.ObjectId;
 
-public class MajorReportDatabase {
+public class MajorReportDatabase{
     public MajorReportDatabase(String fileName, String patientNameM, String ageM, String sexPatientM, String currDateM, String drNameM, String livesData, String liveDataBold, String foetalCardiacData, String placentaGradeData, String fsr, String placentalClotsData, String afi, String osData, String amnioticFluidData, String umbilicalCordData, String lmp, String edd1, String edd2, String rc00, String rc01, String rc02, String rc10, String rc11, String rc12, String rc20, String rc21, String rc22, String rc30, String rc31, String rc32, String avgAge, String foetalWeight, String imp, String addiNote){
-        String encodedUsername = "admin";
-        String encodedPassword = "Mongo%401234";
-        String connectionString = "mongodb+srv://"+ encodedUsername +":"+ encodedPassword +"@navoday-hospital.g6dcr.mongodb.net/?retryWrites=true&w=majority&appName=Navoday-Hospital";
-
+        String connectionString = "mongodb+srv://:connect-psr@navoday-hospital.g6dcr.mongodb.net/?retryWrites=true&w=majority&appName=Navoday-Hospital";
+        System.out.println("Inside Major Databse..");
         // MongoDB client settings
         ServerApi serverApi = ServerApi.builder()
                 .version(ServerApiVersion.V1)

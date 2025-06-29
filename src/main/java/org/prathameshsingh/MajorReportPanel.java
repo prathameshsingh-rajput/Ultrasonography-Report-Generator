@@ -55,7 +55,7 @@ public class MajorReportPanel extends JPanel{
     private JTextField rC22Field;
     private JTextField rC32Field;
 
-    String drName = "Dr. Mayuri Dhoran";
+    String drName = "Dr. Prathameshsingh Rajput";
     String sexPatient = "Female";
 
     Font labelFont = new Font("Roboto", Font.BOLD, 15);
@@ -112,7 +112,7 @@ public class MajorReportPanel extends JPanel{
 
         // Separator line
         JSeparator separator = new JSeparator(JSeparator.HORIZONTAL);
-        separator.setBounds(0, 100, 1600, 1);
+        separator.setBounds(0, 100, 1600, 2);
         add(separator);
 
         //Four Lines Data
