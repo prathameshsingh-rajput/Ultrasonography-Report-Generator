@@ -60,4 +60,64 @@ This software is live and successfully used at **Navoday Hospital, Malkapur**, h
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/<your-username>/ultrasonography-report-generator.git
+   git clone https://github.com/prathameshsingh-rajput/Ultrasonography-Report-Generator.git
+2. **Open in IDE (Eclipse, IntelliJ, NetBeans)**
+
+3. **Add Dependencies**
+
+   If using iText or PDFBox, ensure you add the required .jar files to the project.
+
+5. **Run the Main Class**
+
+   Look for MainFrame.java or the entry point class and run it.
+
+---
+
+## 📂 Folder Structure
+
+ultrasonography-report-generator/
+│
+├── src/
+│   ├── MainFrame.java
+│   ├── MainPanel.java
+│   ├── MinorReportPanel.java
+│   ├── MajorReportPanel.java
+│   ├── PhotoCopyPanel.java
+│   ├── PDFGenerator.java
+│   └── ...
+├── assets/
+│   └── logo.png
+├── README.md
+└── LICENSE
+
+---
+
+## 🔮 Future Improvements
+- Cloud backup and online access
+
+- Multi-language support (Marathi, Hindi, English)
+
+- Integration with hospital management systems (HMS)
+
+- Export report to email or WhatsApp directly
+
+- Data encryption for medical privacy
+
+---
+
+🌟 Show Your Support
+If you like this project, don't forget to:
+
+⭐ Star this repo
+🍴 Fork it
+🐞 Report Issues or suggest new features
+
+---
+
+## 📌 Acknowledgment
+Special thanks to Navoday Hospital, Malkapur for trusting and implementing this software in their sonography workflow.
+
+
+---
+
+
