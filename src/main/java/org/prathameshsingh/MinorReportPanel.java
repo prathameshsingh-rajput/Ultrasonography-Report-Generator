@@ -47,7 +47,7 @@ public class MinorReportPanel extends JPanel {
     private JTextArea additionalNoteField;
 
     private File selectedImageFile;
-    String drName = "Dr. Mayuri Dhoran";
+    String drName = "Dr. Prathameshsingh Rajput";
 
     public MinorReportPanel() {
         setLayout(null); // To Use absolute positioning
@@ -103,7 +103,7 @@ public class MinorReportPanel extends JPanel {
 
         // Separator line
         JSeparator separator = new JSeparator(JSeparator.HORIZONTAL);
-        separator.setBounds(0, 100, 1600, 1);
+        separator.setBounds(0, 100, 1600, 2);
         add(separator);
 
         JLabel lmpLabel = new JLabel("LMP:");

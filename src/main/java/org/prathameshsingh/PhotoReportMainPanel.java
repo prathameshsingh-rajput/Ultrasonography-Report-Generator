@@ -75,7 +75,7 @@ public class PhotoReportMainPanel extends JPanel {
 
             // Add Image at the top
             try {
-                InputStream imageStream = getClass().getClassLoader().getResourceAsStream("PhotoReportTopImg.png");
+                InputStream imageStream = getClass().getClassLoader().getResourceAsStream("photoReport.jpg");
                 if (imageStream != null) {
                     com.itextpdf.text.Image topImage = Image.getInstance(IOUtils.toByteArray(imageStream));
                     topImage.scaleToFit(PageSize.A4.getWidth() - 50, PageSize.A4.getHeight() / 4); // scale to fit the top portion
@@ -173,8 +173,8 @@ public class PhotoReportMainPanel extends JPanel {
                 lastTable.setWidthPercentage(100);
                 lastTable.setSpacingBefore(80);
                 lastTable.setSpacingAfter(0f);
-                addTableCell(lastTable, "\n       www.linkedin.com/in/connect-psr", myAdFont);
-                addTableCell(lastTable, "           Dr. MAYURI HIWALE ", boldPoint);
+                addTableCell(lastTable, "\n       https://prathameshsingh.me", myAdFont);
+                addTableCell(lastTable, "           Dr. Prathameshsingh Rajput ", boldPoint);
 
 
                 document.add(lastTable);
@@ -185,8 +185,8 @@ public class PhotoReportMainPanel extends JPanel {
                 lastTable.setWidthPercentage(100);
                 lastTable.setSpacingBefore(15f);
                 lastTable.setSpacingAfter(0f);
-                addTableCell(lastTable, "\n       www.linkedin.com/in/connect-psr", myAdFont);
-                addTableCell(lastTable, "           Dr. MAYURI HIWALE ", boldPoint);
+                addTableCell(lastTable, "\n       https://prathameshsingh.me", myAdFont);
+                addTableCell(lastTable, "           Dr. Prathameshsingh Rajput ", boldPoint);
 
 
                 document.add(lastTable);

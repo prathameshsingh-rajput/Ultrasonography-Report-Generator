@@ -81,7 +81,7 @@ public class MajorReportMainPanel extends JPanel {
 
             // Add Image at the top
             try {
-                InputStream imageStream = getClass().getClassLoader().getResourceAsStream("TopOfReportImg2.png");
+                InputStream imageStream = getClass().getClassLoader().getResourceAsStream("Non_photoRep.jpg");
                 if (imageStream != null) {
                     Image topImage = Image.getInstance(IOUtils.toByteArray(imageStream));
                     topImage.scaleToFit(PageSize.A4.getWidth() - 50, PageSize.A4.getHeight() / 4); // scale to fit the top portion
@@ -226,7 +226,7 @@ public class MajorReportMainPanel extends JPanel {
             addBlankTableCell(table7);
             Paragraph doctorInfo = new Paragraph();
             doctorInfo.setLeading(14f); // Set the line spacing
-            doctorInfo.add(new Chunk("\n\n    Dr. MAYURI HIWALE\n", boldFont));
+            doctorInfo.add(new Chunk("\n\n    Dr. Prathameshsingh Rajput\n", boldFont));
             doctorInfo.add(new Chunk("    MBBS. DNB (Obs & Gynae) Hyderabad \n" +
                     "    Fellowship in Ultrasonography (Mumbai)", smallNormal));
 

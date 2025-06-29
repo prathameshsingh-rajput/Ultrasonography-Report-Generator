@@ -14,7 +14,6 @@ public class MainFrame extends JFrame {
     private JMenuBar menuBar;
 
     public MainFrame() {
-        setTitle("Ultrasonography Report Generator");
         // Full screen Frame
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         Dimension screenSize = toolkit.getScreenSize();
@@ -33,39 +32,43 @@ public class MainFrame extends JFrame {
         mainPanel.add(new MajorReportMainPanel(), "MajorReportMainPanel");
         mainPanel.add(new PhotoReportMainPanel(), "PhotoReportMainPanel");
 
-        // Set the content pane to the main panel with CardLayout
         setContentPane(mainPanel);
 
         // Custom frame icon
-        ImageIcon icon = new ImageIcon("C:/Users/hp22r/Desktop/Hospital Project/PsrSoftware/src/main/resources/myAppIcon.png"); // Replace with the path to your icon file
+        ImageIcon icon = new ImageIcon("C:/Users/hp22r/Desktop/Hospital Project/PsrSoftware/src/main/resources/myAppIcon.png");
         setIconImage(icon.getImage());
 
         // Create menu bar
         menuBar = createMenuBar();
-        setJMenuBar(null); // Initially do not show menu bar
+        menuBar.setPreferredSize(new Dimension(screenSize.width, 36)); // Uniform height
+        setJMenuBar(null); // Initially hidden
     }
 
     private JMenuBar createMenuBar() {
         JMenuBar menuBar = new JMenuBar();
-        menuBar.setBackground(new java.awt.Color(248, 253, 255));
-        menuBar.setBorder(BorderFactory.createEmptyBorder(5, 2, 1, 5));
+        menuBar.setBackground(new Color(0xECEFF1)); // Light grey-blue
+        menuBar.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
+
+        Font menuFont = new Font("Roboto", Font.BOLD, 17);
+        Color menuTextColor = new Color(0x37474F);
 
         JMenu menu = new JMenu("Menu");
-        menu.setFont(new Font("Roboto", Font.BOLD, 17));
-        menu.setForeground(new java.awt.Color(0, 0, 139));
+        menu.setFont(menuFont);
+        menu.setForeground(menuTextColor);
 
         JMenu view = new JMenu("View");
-        view.setFont(new Font("Roboto", Font.BOLD, 17));
-        view.setForeground(new java.awt.Color(0, 0, 139));
+        view.setFont(menuFont);
+        view.setForeground(menuTextColor);
 
         JMenu report = new JMenu("Report");
-        report.setFont(new Font("Roboto", Font.BOLD, 17));
-        report.setForeground(new java.awt.Color(0, 0, 139));
+        report.setFont(menuFont);
+        report.setForeground(menuTextColor);
 
         JMenu about = new JMenu("About");
-        about.setFont(new Font("Roboto", Font.BOLD, 17));
-        about.setForeground(new java.awt.Color(0, 0, 139));
+        about.setFont(menuFont);
+        about.setForeground(menuTextColor);
 
+        // Menu items
         JMenuItem minorReportPanelItem = createMenuItem("Minor Report", "MinorReportMainPanel", KeyEvent.VK_M, KeyStroke.getKeyStroke(KeyEvent.VK_1, ActionEvent.CTRL_MASK));
         JMenuItem majorReportPanelItem = createMenuItem("Major Report", "MajorReportMainPanel", KeyEvent.VK_J, KeyStroke.getKeyStroke(KeyEvent.VK_2, ActionEvent.CTRL_MASK));
         JMenuItem photoReportPanelItem = createMenuItem("Photo Report", "PhotoReportMainPanel", KeyEvent.VK_P, KeyStroke.getKeyStroke(KeyEvent.VK_3, ActionEvent.CTRL_MASK));
@@ -88,12 +91,22 @@ public class MainFrame extends JFrame {
         view.add(majorReportFolderItem);
         view.add(photoReportFolderItem);
 
-        about.add(createAboutMenuItem()); // Add action listener to About menu
+        about.add(createAboutMenuItem());
+
 
         menuBar.add(menu);
         menuBar.add(report);
         menuBar.add(view);
         menuBar.add(about);
+
+        menuBar.add(Box.createHorizontalStrut(270));
+
+
+        JLabel titleLabel = new JLabel("  Ultrasonography Report Generator  ");
+        titleLabel.setFont(new Font("Roboto", Font.BOLD, 18));
+        titleLabel.setForeground(new Color(0x1976D2));
+        titleLabel.setBorder(BorderFactory.createEmptyBorder(0, 10, 0, 20));
+        menuBar.add(titleLabel);
 
         return menuBar;
     }
@@ -101,10 +114,10 @@ public class MainFrame extends JFrame {
     private JMenuItem createMenuItem(String title, String panelName, int mnemonic, KeyStroke accelerator) {
         JMenuItem menuItem = new JMenuItem(title);
         menuItem.setFont(new Font("Roboto", Font.PLAIN, 16));
-        menuItem.setForeground(new java.awt.Color(0, 0, 139));
+        menuItem.setForeground(new Color(0x37474F));
         menuItem.setBackground(Color.WHITE);
         menuItem.setOpaque(true);
-        menuItem.setPreferredSize(new Dimension(150, 40));
+        menuItem.setMargin(new Insets(4, 10, 4, 10));
         menuItem.setMnemonic(mnemonic);
         menuItem.setAccelerator(accelerator);
         menuItem.addActionListener(e -> showPanel(panelName));
@@ -114,10 +127,10 @@ public class MainFrame extends JFrame {
     private JMenuItem createFolderMenuItem(String title, String folderPath) {
         JMenuItem menuItem = new JMenuItem(title);
         menuItem.setFont(new Font("Roboto", Font.PLAIN, 16));
-        menuItem.setForeground(new java.awt.Color(0, 0, 139));
+        menuItem.setForeground(new Color(0x37474F));
         menuItem.setBackground(Color.WHITE);
         menuItem.setOpaque(true);
-        menuItem.setPreferredSize(new Dimension(170, 40));
+        menuItem.setMargin(new Insets(4, 10, 4, 10));
         menuItem.addActionListener(e -> openFolder(folderPath));
         return menuItem;
     }
@@ -125,32 +138,28 @@ public class MainFrame extends JFrame {
     private JMenuItem createAboutMenuItem() {
         JMenuItem aboutItem = new JMenuItem("About");
         aboutItem.setFont(new Font("Roboto", Font.PLAIN, 16));
-        aboutItem.setForeground(new java.awt.Color(0, 0, 139));
+        aboutItem.setForeground(new Color(0x37474F));
         aboutItem.setBackground(Color.WHITE);
         aboutItem.setOpaque(true);
-        aboutItem.setPreferredSize(new Dimension(150, 40));
+        aboutItem.setMargin(new Insets(4, 10, 4, 10));
         aboutItem.addActionListener(e -> showAboutDialog());
         return aboutItem;
     }
 
     private void showAboutDialog() {
-        // Create a panel for the JOptionPane
         JPanel aboutPanel = new JPanel(new BorderLayout(5, 5));
         aboutPanel.setBackground(Color.WHITE);
 
-        // User information with clickable link
         JEditorPane infoPane = new JEditorPane("text/html",
                 "<html><br><center>Ultrasonography Report Generator 2024.8.9 (Ultimate Edition) <br>" +
                         "Build #IU-746.24082003.05, built on August 14, 2024 <br>" +
                         "Software Version: 2.4<br><br> " +
                         "Subscription is activated until August 14, 2025.<br><br> " +
-                        "Powered by <a href=\"https://linktr.ee/rajput_prathameshsingh?utm_source=linktree_profile_share&ltsid=4a7912cf-bdab-48ea-ba66-7930442a7fdf\">Connect Developer</a><br>" +
+                        "Powered by <a href=\"https://prathameshsingh.me\">Connect Developer</a><br>" +
                         "Copyright ©2024-2025 PSR-SoftHub</center></html>");
         infoPane.setEditable(false);
         infoPane.setFont(new Font("Roboto", Font.BOLD, 15));
         infoPane.setBackground(Color.WHITE);
-
-        // Add a hyperlink listener to handle clicks
         infoPane.addHyperlinkListener(e -> {
             if (HyperlinkEvent.EventType.ACTIVATED.equals(e.getEventType())) {
                 try {
@@ -161,17 +170,13 @@ public class MainFrame extends JFrame {
             }
         });
 
-        // Icon
-        ImageIcon aboutIcon = new ImageIcon("C:/Users/hp22r/Desktop/Hospital Project/PsrSoftware/src/main/resources/check.png"); // Replace with the path to your icon file
+        ImageIcon aboutIcon = new ImageIcon("C:/Users/hp22r/Desktop/Hospital Project/PsrSoftware/src/main/resources/check.png");
         Image aboutImage = aboutIcon.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
         aboutIcon = new ImageIcon(aboutImage);
 
         aboutPanel.add(infoPane, BorderLayout.CENTER);
-
         JOptionPane.showMessageDialog(this, aboutPanel, "About", JOptionPane.INFORMATION_MESSAGE, aboutIcon);
     }
-
-
 
     private void openFolder(String folderPath) {
         File folder = new File(folderPath);
@@ -190,15 +195,14 @@ public class MainFrame extends JFrame {
         cardLayout.show(mainPanel, panelName);
         if ("LoginPanel".equals(panelName)) {
             setJMenuBar(null); // Hide menu bar
-            ((LoginPanel) mainPanel.getComponent(0)).resetFields(); // Reset fields in login panel
+            ((LoginPanel) mainPanel.getComponent(0)).resetFields();
         } else {
-            setJMenuBar(menuBar); // Show menu bar for other panels
+            setJMenuBar(menuBar); // Show menu bar
         }
     }
 
-
     public void showMainPanel() {
-        setJMenuBar(menuBar); // Show menu bar when main panel is shown
+        setJMenuBar(menuBar);
         showPanel("MinorReportMainPanel");
     }
 
